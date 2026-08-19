@@ -9,7 +9,13 @@ import tempfile
 
 import streamlit as st
 
-from hwp_survey import items_to_dsl, parse_dsl, read_survey, summarize
+#from hwp_survey import items_to_dsl, parse_dsl, read_survey, summarize
+# 기존: from hwp_survey import items_to_dsl, parse_dsl, read_survey, summarize
+
+# 변경: 함수가 들어있는 실제 파일명(.py)을 명시
+from hwp_survey.parser import parse_dsl
+from hwp_survey.reader import read_survey
+from hwp_survey.writer import items_to_dsl, summarize  # (함수가 위치한 파일명으로 수정)
 from hwp_survey.writer import SurveyWriter
 
 st.set_page_config(page_title="설문지 변환기 · 한글 → 워드",
